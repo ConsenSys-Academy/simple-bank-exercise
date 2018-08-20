@@ -21,7 +21,6 @@ contract SimpleBank {
     /* Create an event called LogWithdrawal */
     /* Add 3 arguments for this event, an accountAddress, withdrawalAmount and a newBalance */
 
-    // Constructor, can receive one or many variables here; only one allowed
     constructor() {
         /* Set the owner to the creator of this contract */
     }
