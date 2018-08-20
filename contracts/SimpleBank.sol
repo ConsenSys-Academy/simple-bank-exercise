@@ -1,4 +1,4 @@
-pragma solidity ^0.4.13;
+pragma solidity ^0.4.21;
 contract SimpleBank {
 
     /* Fill in the keyword. Hint: We want to protect our users balance from other contracts*/
@@ -21,6 +21,7 @@ contract SimpleBank {
     /* Create an event called LogWithdrawal */
     /* Add 3 arguments for this event, an accountAddress, withdrawalAmount and a newBalance */
 
+    /* Use the appropriate global variable to get the sender of the transaction */
     constructor() {
         /* Set the owner to the creator of this contract */
     }
@@ -34,6 +35,7 @@ contract SimpleBank {
     /// @notice Deposit ether into bank
     /// @return The balance of the user after the deposit is made
     // Add the appropriate keyword so that this function can receive ether
+    // Use the appropriate global variables to get the transaction sender and value
     function deposit() public returns (uint) {
         /* Add the amount to the user's balance, call the event associated with a deposit,
           then return the balance of the user */
