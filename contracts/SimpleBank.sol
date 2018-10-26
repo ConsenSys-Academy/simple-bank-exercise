@@ -25,7 +25,7 @@ contract SimpleBank {
     event LogDepositMade();
 
     /* Create an event called LogWithdrawal */
-    /* Add 3 arguments for this event, an accountAddress, withdrawalAmount and a newBalance */
+    /* Add 3 arguments for this event, an accountAddress, withdrawAmount and a newBalance */
 
 
     //
