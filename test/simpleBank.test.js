@@ -39,8 +39,8 @@ contract('SimpleBank', function(accounts) {
     const logAccountAddress = log.args.accountAddress;
     const logDepositAmount = log.args.amount.toNumber();
 
-    assert.equal(expectedEventResult.accountAddress, logAccountAddress, "LogDepositMade event accountAddress property not emmitted, check deposit method");
-    assert.equal(expectedEventResult.amount, logDepositAmount, "LogDepositMade event amount property not emmitted, check deposit method");
+    assert.equal(expectedEventResult.accountAddress, logAccountAddress, "LogDepositMade event accountAddress property not emitted, check deposit method");
+    assert.equal(expectedEventResult.amount, logDepositAmount, "LogDepositMade event amount property not emitted, check deposit method");
   });
 
   it("should withdraw correct amount", async () => {
@@ -64,9 +64,9 @@ contract('SimpleBank', function(accounts) {
     const expectedEventResult = {accountAddress: alice, newBalance: initialAmount, withdrawalAmount: deposit};
 
 
-    assert.equal(expectedEventResult.accountAddress, accountAddress, "LogWithdrawal event accountAddress property not emmitted, check deposit method");
-    assert.equal(expectedEventResult.newBalance, newBalance, "LogWithdrawal event newBalance property not emmitted, check deposit method");
-    assert.equal(expectedEventResult.withdrawalAmount, withdrawalAmount, "LogWithdrawal event withdrawalAmount property not emmitted, check deposit method");
+    assert.equal(expectedEventResult.accountAddress, accountAddress, "LogWithdrawal event accountAddress property not emitted, check deposit method");
+    assert.equal(expectedEventResult.newBalance, newBalance, "LogWithdrawal event newBalance property not emitted, check deposit method");
+    assert.equal(expectedEventResult.withdrawalAmount, withdrawalAmount, "LogWithdrawal event withdrawalAmount property not emitted, check deposit method");
 
   });
 });
