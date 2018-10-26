@@ -47,7 +47,7 @@ contract SimpleBank {
 
     /// @notice Enroll a customer with the bank
     /// @return The users enrolled status
-    // Log the appropriate event
+    // Emit the appropriate event
     function enroll() public returns (bool){
     }
 
@@ -55,6 +55,7 @@ contract SimpleBank {
     /// @return The balance of the user after the deposit is made
     // Add the appropriate keyword so that this function can receive ether
     // Use the appropriate global variables to get the transaction sender and value
+    // Emit the appropriate event    
     function deposit() public returns (uint) {
         /* Add the amount to the user's balance, call the event associated with a deposit,
           then return the balance of the user */
@@ -64,6 +65,7 @@ contract SimpleBank {
     /// @dev This does not return any excess ether sent to it
     /// @param withdrawAmount amount you want to withdraw
     /// @return The balance remaining for the user
+    // Emit the appropriate event    
     function withdraw(uint withdrawAmount) public returns (uint) {
         /* If the sender's balance is at least the amount they want to withdraw,
            Subtract the amount from the sender's balance, and try to send that amount of ether
