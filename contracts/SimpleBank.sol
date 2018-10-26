@@ -59,7 +59,7 @@ contract SimpleBank {
     function withdraw(uint withdrawAmount) public returns (uint) {
         /* If the sender's balance is at least the amount they want to withdraw,
            Subtract the amount from the sender's balance, and try to send that amount of ether
-           to the user attempting to withdraw. IF the send fails, add the amount back to the user's balance
+           to the user attempting to withdraw. 
            return the user's balance.*/
     }
 
