@@ -1,6 +1,10 @@
 pragma solidity ^0.4.21;
 contract SimpleBank {
 
+    //
+    // State variables
+    //
+    
     /* Fill in the keyword. Hint: We want to protect our users balance from other contracts*/
     mapping (address => uint) balances;
     
@@ -9,8 +13,10 @@ contract SimpleBank {
 
     /* Let's make sure everyone knows who owns the bank. Use the appropriate keyword for this*/
     address owner;
-
+    
+    //
     // Events - publicize actions to external listeners
+    //
     
     /* Add an argument for this event, an accountAddress */
     event LogEnrolled();
@@ -20,6 +26,11 @@ contract SimpleBank {
 
     /* Create an event called LogWithdrawal */
     /* Add 3 arguments for this event, an accountAddress, withdrawalAmount and a newBalance */
+
+
+    //
+    // Functions
+    //
 
     /* Use the appropriate global variable to get the sender of the transaction */
     constructor() {
