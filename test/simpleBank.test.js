@@ -59,14 +59,14 @@ contract('SimpleBank', function(accounts) {
     
     const accountAddress = log.args.accountAddress;
     const newBalance = log.args.newBalance.toNumber();
-    const withdrawalAmount = log.args.withdrawAmount.toNumber();
+    const withdrawAmount = log.args.withdrawAmount.toNumber();
 
-    const expectedEventResult = {accountAddress: alice, newBalance: initialAmount, withdrawalAmount: deposit};
+    const expectedEventResult = {accountAddress: alice, newBalance: initialAmount, withdrawAmount: deposit};
 
 
     assert.equal(expectedEventResult.accountAddress, accountAddress, "LogWithdrawal event accountAddress property not emitted, check deposit method");
     assert.equal(expectedEventResult.newBalance, newBalance, "LogWithdrawal event newBalance property not emitted, check deposit method");
-    assert.equal(expectedEventResult.withdrawalAmount, withdrawalAmount, "LogWithdrawal event withdrawalAmount property not emitted, check deposit method");
+    assert.equal(expectedEventResult.withdrawAmount, withdrawAmount, "LogWithdrawal event withdrawalAmount property not emitted, check deposit method");
 
   });
 });
