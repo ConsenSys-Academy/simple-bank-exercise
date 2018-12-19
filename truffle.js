@@ -6,9 +6,9 @@ Feel free to use Solidity version 0.5
 */
 
 module.exports = {
-  compilers: {
-    solc: '0.4.25'
-  },
+//   compilers: {
+//     solc: '0.4.25'
+//   },
   networks: {
     development: {
       host: "localhost",
