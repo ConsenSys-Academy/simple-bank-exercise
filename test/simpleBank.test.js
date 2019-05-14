@@ -57,7 +57,7 @@ contract('SimpleBank', function(accounts) {
     const initialAmount = 0
     await instance.enroll({from: alice})
     await instance.deposit({from: alice, value: deposit})
-	  await instance.withdraw(deposit, {from: alice})
+    await instance.withdraw(deposit, {from: alice})
     const balance = await instance.getBalance({from: alice})
 
     assert.equal(balance.toString(), initialAmount.toString(), 'balance incorrect after withdrawal, check withdraw method')
