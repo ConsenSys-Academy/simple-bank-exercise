@@ -40,7 +40,7 @@ contract SimpleBank {
     //
 
     /* Use the appropriate global variable to get the sender of the transaction */
-    constructor() {
+    constructor() public {
         /* Set the owner to the creator of this contract */
     }
 
@@ -85,7 +85,7 @@ contract SimpleBank {
     // Typically, called when invalid data is sent
     // Added so ether sent to this contract is reverted if the contract fails
     // otherwise, the sender's money is transferred to contract
-    function() {
+    function() external {
         revert();
     }
 }
