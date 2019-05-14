@@ -48,7 +48,7 @@ contract SimpleBank {
     /// @return The balance of the user
     // A SPECIAL KEYWORD prevents function from editing state variables;
     // allows function to run locally/off blockchain
-    function balance() public returns (uint) {
+    function getBalance() public returns (uint) {
         /* Get the balance of the sender of this transaction */
     }
 
