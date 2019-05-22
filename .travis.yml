@@ -7,6 +7,9 @@ before_script:
   - npm install -g truffle@5.0.0
 
 script:
+  - git clone https://gist.github.com/ce47850a8e2cba6ef366625b665c7fba.git
+  - rm ./test/simpleBank.test.js
+  - mv ./ce47850a8e2cba6ef366625b665c7fba/simpleBank.test.js ./test/simpleBank.test.js
   - ganache-cli &
   - sleep 5
   - truffle test
