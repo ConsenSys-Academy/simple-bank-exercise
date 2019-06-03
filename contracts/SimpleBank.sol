@@ -44,6 +44,15 @@ contract SimpleBank {
         /* Set the owner to the creator of this contract */
     }
 
+    // Fallback function - Called if other functions don't match call or
+    // sent ether without data
+    // Typically, called when invalid data is sent
+    // Added so ether sent to this contract is reverted if the contract fails
+    // otherwise, the sender's money is transferred to contract
+    function() external {
+        revert();
+    }
+
     /// @notice Get balance
     /// @return The balance of the user
     // A SPECIAL KEYWORD prevents function from editing state variables;
@@ -81,12 +90,4 @@ contract SimpleBank {
            return the user's balance.*/
     }
 
-    // Fallback function - Called if other functions don't match call or
-    // sent ether without data
-    // Typically, called when invalid data is sent
-    // Added so ether sent to this contract is reverted if the contract fails
-    // otherwise, the sender's money is transferred to contract
-    function() external {
-        revert();
-    }
 }
