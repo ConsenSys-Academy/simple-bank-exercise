@@ -1,6 +1,9 @@
 module.exports = {
   compilers: {
-    solc: '0.6.12'
+    solc: '0.6.12',
+    settings: {
+      evmVersion: "byzantium"
+    }
   },
   networks: {
     development: {
