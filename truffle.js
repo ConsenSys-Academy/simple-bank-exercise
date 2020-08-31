@@ -1,7 +1,7 @@
 module.exports = {
-//   compilers: {
-//     solc: '0.4.25'
-//   },
+  compilers: {
+    solc: '0.6.12'
+  },
   networks: {
     development: {
       host: "localhost",
