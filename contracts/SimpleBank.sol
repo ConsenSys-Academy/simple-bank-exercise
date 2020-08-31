@@ -4,7 +4,7 @@
     https://solidity.readthedocs.io/en/v0.6.12/060-breaking-changes.html
 */
 
-pragma solidity ^0.6.12;
+pragma solidity ^0.5.0;
 
 contract SimpleBank {
 
@@ -49,7 +49,7 @@ contract SimpleBank {
     // Typically, called when invalid data is sent
     // Added so ether sent to this contract is reverted if the contract fails
     // otherwise, the sender's money is transferred to contract
-    fallback() external payable {
+    function () external payable {
         revert();
     }
 
