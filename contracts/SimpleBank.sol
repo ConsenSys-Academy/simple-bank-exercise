@@ -3,8 +3,8 @@
     Breaking changes from 0.5 to 0.6 can be found here: 
     https://solidity.readthedocs.io/en/v0.6.12/060-breaking-changes.html
 */
-
-pragma solidity ^0.5.0;
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.5.16 <0.9.0;
 
 contract SimpleBank {
 
