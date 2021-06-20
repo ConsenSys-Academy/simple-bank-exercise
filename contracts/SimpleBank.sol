@@ -1,7 +1,7 @@
 /*
-    This exercise has been updated to use Solidity version 0.6.12
-    Breaking changes from 0.5 to 0.6 can be found here: 
-    https://solidity.readthedocs.io/en/v0.6.12/060-breaking-changes.html
+    This exercise has been updated to use Solidity version 0.8.5
+    See the latest Solidity updates at
+    https://solidity.readthedocs.io/en/latest/080-breaking-changes.html
 */
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.5.16 <0.9.0;
@@ -12,28 +12,31 @@ contract SimpleBank {
     // State variables
     //
     
-    /* Fill in the keyword. Hint: We want to protect our users balance from other contracts*/
     mapping (address => uint) balances;
+    // Fill in the keyword. 
+    // Hint: We want to protect our users balance from other contracts
     
-    /* Fill in the keyword. We want to create a getter function and allow contracts to be able to see if a user is enrolled.  */
     mapping (address => bool) enrolled;
+    // Fill in the keyword. 
+    // Hint: We want to create a getter function and allow contracts to be able
+    // to see if a user is enrolled.
 
-    /* Let's make sure everyone knows who owns the bank. Use the appropriate keyword for this*/
-    address owner;
+    // Let's make sure everyone knows who owns the bank. 
+    // Hint: Use the appropriate keyword for this
     
     //
     // Events - publicize actions to external listeners
     //
     
-    /* Add an argument for this event, an accountAddress */
     event LogEnrolled();
+    // Add an argument for this event, an accountAddress
 
-    /* Add 2 arguments for this event, an accountAddress and an amount */
     event LogDepositMade();
 
-    /* Create an event called LogWithdrawal */
-    /* Add 3 arguments for this event, an accountAddress, withdrawAmount and a newBalance */
+    // Add 2 arguments for this event, an accountAddress and an amount
 
+    // Create an event called LogWithdrawal
+    // Hint: it should take 3 arguments: an accountAddress, withdrawAmount and a newBalance 
 
     //
     // Functions
@@ -58,13 +61,14 @@ contract SimpleBank {
     // A SPECIAL KEYWORD prevents function from editing state variables;
     // allows function to run locally/off blockchain
     function getBalance() public returns (uint) {
-        /* Get the balance of the sender of this transaction */
+      // Get the balance of the sender of this transaction
     }
 
     /// @notice Enroll a customer with the bank
     /// @return The users enrolled status
     // Emit the appropriate event
     function enroll() public returns (bool){
+      // enroll of the sender of this transaction
     }
 
     /// @notice Deposit ether into bank
@@ -74,8 +78,9 @@ contract SimpleBank {
     // Emit the appropriate event    
     // Users should be enrolled before they can make deposits
     function deposit() public returns (uint) {
-        /* Add the amount to the user's balance, call the event associated with a deposit,
-          then return the balance of the user */
+      // 1. Add the amount to the user's balance, 
+      // 2. Emit the appropriate event associated with this function
+      // 3. return the balance of sndr of this transaction
     }
 
     /// @notice Withdraw ether from bank
@@ -84,10 +89,15 @@ contract SimpleBank {
     /// @return The balance remaining for the user
     // Emit the appropriate event    
     function withdraw(uint withdrawAmount) public returns (uint) {
-        /* If the sender's balance is at least the amount they want to withdraw,
-           Subtract the amount from the sender's balance, and try to send that amount of ether
-           to the user attempting to withdraw. 
-           return the user's balance.*/
+      // If the sender's balance is at least the amount they want to withdraw,
+      // Subtract the amount from the sender's balance, and try to send that amount of ether
+      // to the user attempting to withdraw. 
+      // return the user's balance.
+
+      // 1. Use a require expression to guard/ensure sender has enough funds
+      // 2. Transfer Eth to the sender and decrement the withdrawal amount from
+      //    sender's balance
     }
 
+      // 3. Emit the appropriate event for this message
 }
