@@ -20,13 +20,24 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm -g install truffle
-    - run: git checkout ci_admin test/simpleBank.test.js
-    - run: truffle test
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install latest truffle
+        run: npm -g install truffle
+
+      - name: Setup for Consensys Academy
+        if: ${{ github.repository_owner	== 'Consensys-Academy' }}
+        run: git checkout ci_admin test/simpleBank.test.js
+
+      - name: Setup for student grading
+        if: ${{ github.repository_owner	!= 'Consensys-Academy' }}
+        run: git checkout ci_student test/simpleBank.test.js
+
+      - name: Run tests
+        run: truffle test test/simpleBank.test.js
