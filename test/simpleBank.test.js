@@ -24,7 +24,7 @@ contract("SimpleBank", function (accounts) {
     assert.equal(await web3.eth.getBalance(alice), eth100.toString());
   });
 
-  it("is owned by owner", async () => {
+  it.skip("is owned by owner", async () => {
     assert.equal(
       // Hint:
       //   the error `TypeError: Cannot read property 'call' of undefined`
@@ -38,7 +38,7 @@ contract("SimpleBank", function (accounts) {
     );
   });
 
-  it("should mark addresses as enrolled", async () => {
+  it.skip("should mark addresses as enrolled", async () => {
     await instance.enroll({ from: alice });
 
     const aliceEnrolled = await instance.enrolled(alice, { from: alice });
@@ -49,7 +49,7 @@ contract("SimpleBank", function (accounts) {
     );
   });
 
-  it("should not mark unenrolled users as enrolled", async () => {
+  it.skip("should not mark unenrolled users as enrolled", async () => {
     const ownerEnrolled = await instance.enrolled(contractOwner, { from: contractOwner });
     assert.equal(
       ownerEnrolled,
@@ -58,7 +58,7 @@ contract("SimpleBank", function (accounts) {
     );
   });
 
-  it("should deposit correct amount", async () => {
+  it.skip("should deposit correct amount", async () => {
     await instance.enroll({ from: alice });
     await instance.deposit({ from: alice, value: deposit });
     const balance = await instance.getBalance.call({ from: alice });
@@ -70,7 +70,7 @@ contract("SimpleBank", function (accounts) {
     );
   });
 
-  it("should log a deposit event when a deposit is made", async () => {
+  it.skip("should log a deposit event when a deposit is made", async () => {
     await instance.enroll({ from: alice });
     const result = await instance.deposit({ from: alice, value: deposit });
 
@@ -92,7 +92,7 @@ contract("SimpleBank", function (accounts) {
     );
   });
 
-  it("should withdraw correct amount", async () => {
+  it.skip("should withdraw correct amount", async () => {
     const initialAmount = 0;
     await instance.enroll({ from: alice });
     await instance.deposit({ from: alice, value: deposit });
@@ -106,13 +106,13 @@ contract("SimpleBank", function (accounts) {
     );
   });
 
-  it("should not be able to withdraw more than has been deposited", async () => {
+  it.skip("should not be able to withdraw more than has been deposited", async () => {
     await instance.enroll({ from: alice });
     await instance.deposit({ from: alice, value: deposit });
     await catchRevert(instance.withdraw(deposit + 1, { from: alice }));
   });
 
-  it("should emit the appropriate event when a withdrawal is made", async () => {
+  it.skip("should emit the appropriate event when a withdrawal is made", async () => {
     const initialAmount = 0;
     await instance.enroll({ from: alice });
     await instance.deposit({ from: alice, value: deposit });
