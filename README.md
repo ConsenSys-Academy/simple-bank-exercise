@@ -47,5 +47,5 @@ The general workflow is to use Test Drive Development's red green process:
 
  Check out the testing files to see how tests are implemented in JavaScript.
  We will go over the details of implementing tests later in the curriculum. Of
- course, if you have questions, do reach out in Slack, or schedule an Office
+ course, if you have questions, do reach out in Discord, or schedule an Office
  Hour session with one of our mentors.
