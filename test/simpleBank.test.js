@@ -1,3 +1,13 @@
+/*
+
+The public version of the file used for testing can be found here: https://gist.github.com/ConsenSys-Academy/ce47850a8e2cba6ef366625b665c7fba
+
+This test file has been updated for Truffle version 5.0. If your tests are failing, make sure that you are
+using Truffle version 5.0. You can check this by running "trufffle version"  in the terminal. If version 5 is not
+installed, you can uninstall the existing version with `npm uninstall -g truffle` and install the latest version (5.0)
+with `npm install -g truffle`.
+
+*/
 const { catchRevert } = require("./exceptionsHelpers.js");
 var SimpleBank = artifacts.require("./SimpleBank.sol");
 
@@ -14,7 +24,7 @@ contract("SimpleBank", function (accounts) {
     assert.equal(await web3.eth.getBalance(alice), eth100.toString());
   });
 
-  it.skip("is owned by owner", async () => {
+  it("is owned by owner", async () => {
     assert.equal(
       // Hint:
       //   the error `TypeError: Cannot read property 'call' of undefined`
@@ -28,7 +38,7 @@ contract("SimpleBank", function (accounts) {
     );
   });
 
-  it.skip("should mark addresses as enrolled", async () => {
+  it("should mark addresses as enrolled", async () => {
     await instance.enroll({ from: alice });
 
     const aliceEnrolled = await instance.enrolled(alice, { from: alice });
@@ -39,7 +49,7 @@ contract("SimpleBank", function (accounts) {
     );
   });
 
-  it.skip("should not mark unenrolled users as enrolled", async () => {
+  it("should not mark unenrolled users as enrolled", async () => {
     const ownerEnrolled = await instance.enrolled(contractOwner, { from: contractOwner });
     assert.equal(
       ownerEnrolled,
@@ -48,7 +58,7 @@ contract("SimpleBank", function (accounts) {
     );
   });
 
-  it.skip("should deposit correct amount", async () => {
+  it("should deposit correct amount", async () => {
     await instance.enroll({ from: alice });
     await instance.deposit({ from: alice, value: deposit });
     const balance = await instance.getBalance.call({ from: alice });
@@ -60,7 +70,7 @@ contract("SimpleBank", function (accounts) {
     );
   });
 
-  it.skip("should log a deposit event when a deposit is made", async () => {
+  it("should log a deposit event when a deposit is made", async () => {
     await instance.enroll({ from: alice });
     const result = await instance.deposit({ from: alice, value: deposit });
 
@@ -82,7 +92,7 @@ contract("SimpleBank", function (accounts) {
     );
   });
 
-  it.skip("should withdraw correct amount", async () => {
+  it("should withdraw correct amount", async () => {
     const initialAmount = 0;
     await instance.enroll({ from: alice });
     await instance.deposit({ from: alice, value: deposit });
@@ -96,13 +106,13 @@ contract("SimpleBank", function (accounts) {
     );
   });
 
-  it.skip("should not be able to withdraw more than has been deposited", async () => {
+  it("should not be able to withdraw more than has been deposited", async () => {
     await instance.enroll({ from: alice });
     await instance.deposit({ from: alice, value: deposit });
     await catchRevert(instance.withdraw(deposit + 1, { from: alice }));
   });
 
-  it.skip("should emit the appropriate event when a withdrawal is made", async () => {
+  it("should emit the appropriate event when a withdrawal is made", async () => {
     const initialAmount = 0;
     await instance.enroll({ from: alice });
     await instance.deposit({ from: alice, value: deposit });
