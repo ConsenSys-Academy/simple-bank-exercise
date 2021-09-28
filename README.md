@@ -30,17 +30,15 @@ functionality. The test are there to determine correct contract behavior as
 well as guide you through the implementation. 
 
 The general workflow is to use Test Drive Development's red green process:
-  1. Enable a test in `simpleBank.test.js`. This means changing `it.skip`, to
-     `it` in the test declaration.
-  2. Run `truffle test` from a terminal.
-  3. Use the failed test output along with the hints in
+  1. Run `truffle test` from a terminal.
+  2. Use the failed test output along with the hints in
      `contracts/SimpleBank.sol` to make the test pass.
 
-<details><summary>Video: Run a test example</summary>
+<!-- <details><summary>Video: Run a test example</summary>
 
 [![asciicast](https://asciinema.org/a/u3oXwF8qKruSN81sm8MGsmTf0.png)](https://asciinema.org/a/u3oXwF8qKruSN81sm8MGsmTf0)
 
-</details>
+</details> -->
 
 
 ### Note on testing
