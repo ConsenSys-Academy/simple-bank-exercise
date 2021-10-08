@@ -7,6 +7,10 @@ and [Truffle JavaScript test
 files](https://www.trufflesuite.com/docs/truffle/testing/writing-tests-in-javascript).
 In this exercise you are going to implement the SimpleBank.sol contract.
 
+## Setting The Stage
+We want to create a depository institution on the Ethereum blockchain, and we need your help! <br/>
+The bank should be able to enroll new users and allow them to make deposits / widthdraw transactions! <img style="float: right;" src="whatever.jpg">
+
 ## Files
 
   * `contracts/SimpleBank.sol`
