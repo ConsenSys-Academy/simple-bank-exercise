@@ -8,8 +8,11 @@ files](https://www.trufflesuite.com/docs/truffle/testing/writing-tests-in-javasc
 In this exercise you are going to implement the SimpleBank.sol contract.
 
 ## Setting The Stage
+
+<img  align="right" src="https://live.staticflickr.com/6179/6201850469_51ce8e1f8a.jpg" width="170">
+
 We want to create a depository institution on the Ethereum blockchain, and we need your help! <br/>
-The bank should be able to enroll new users and allow them to make deposits / widthdraw transactions! <img style="float: right;" src="whatever.jpg">
+The bank should be able to enroll new users and allow them to make deposits / widthdraw transactions! <br/><br/>
 
 ## Files
 
