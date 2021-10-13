@@ -47,6 +47,7 @@ The general workflow is to use Test Drive Development's red green process:
 
 </details> -->
 
+Note: Truffle will default to use a Solidity 0.5.x compiler with this contract as-is. To use the latest 0.8.x compiler, please comment out lines 9-14 in [truffle-config.js.](truffle-config.js)
 
 ### Note on testing
 
