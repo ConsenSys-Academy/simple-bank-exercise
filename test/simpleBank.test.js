@@ -8,8 +8,9 @@ installed, you can uninstall the existing version with `npm uninstall -g truffle
 with `npm install -g truffle`.
 
 */
-const { catchRevert } = require("./exceptionsHelpers.js");
+// const { catchRevert } = require("./exceptionsHelpers.js");
 var SimpleBank = artifacts.require("./SimpleBank.sol");
+const { expectRevert } = require('@openzeppelin/test-helpers');
 
 contract("SimpleBank", function (accounts) {
   const [contractOwner, alice] = accounts;
@@ -20,8 +21,10 @@ contract("SimpleBank", function (accounts) {
   });
 
   it("ready to be solved!", async() => {
-    const eth100 = 100e18;
-    assert.equal(await web3.eth.getBalance(alice), eth100.toString());
+    const eth1000 = 1e21;
+    // const aliceBalace = await web3.eth.getBalance(alice);
+    // console.log(aliceBalance);
+    assert.equal(await web3.eth.getBalance(alice), eth1000);
   });
 
   it("is owned by owner", async () => {
@@ -109,7 +112,7 @@ contract("SimpleBank", function (accounts) {
   it("should not be able to withdraw more than has been deposited", async () => {
     await instance.enroll({ from: alice });
     await instance.deposit({ from: alice, value: deposit });
-    await catchRevert(instance.withdraw(deposit + 1, { from: alice }));
+    await expectRevert.unspecified(instance.withdraw(deposit + 1, { from: alice }));
   });
 
   it("should emit the appropriate event when a withdrawal is made", async () => {
