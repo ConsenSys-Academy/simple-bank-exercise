@@ -8,7 +8,7 @@ installed, you can uninstall the existing version with `npm uninstall -g truffle
 with `npm install -g truffle`.
 
 */
-// const { catchRevert } = require("./exceptionsHelpers.js");
+
 var SimpleBank = artifacts.require("./SimpleBank.sol");
 const { expectRevert } = require('@openzeppelin/test-helpers');
 
