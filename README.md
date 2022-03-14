@@ -28,9 +28,9 @@ The bank should be able to enroll new users and allow them to make deposits / wi
      npm -g uninstall truffle && npm -g install truffle
      ```
   1. Install dependencies.
-    ```console
-    npm install
-    ```
+     ```console
+     npm install
+     ```
   1. Your preferred code editor.
   1. Familiarity with terminals.
 

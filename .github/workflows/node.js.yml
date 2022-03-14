@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -30,6 +30,9 @@ jobs:
 
       - name: Install latest truffle
         run: npm -g install truffle
+
+      - name: Install OZ test helpers
+        run: npm install @openzeppelin/test-helpers  
 
       - name: Setup for Consensys Academy
         if: ${{ github.repository_owner	== 'Consensys-Academy' }}
