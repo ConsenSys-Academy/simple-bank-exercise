@@ -21,7 +21,7 @@ contract("SimpleBank", function (accounts) {
   });
 
   it("ready to be solved!", async() => {
-    const eth1000 = "1000000000000000000000";
+    const eth1000 = "100000000000000000000";
     // const aliceBalace = await web3.eth.getBalance(alice);
     // console.log(aliceBalance);
     assert.equal(await web3.eth.getBalance(alice), eth1000);
