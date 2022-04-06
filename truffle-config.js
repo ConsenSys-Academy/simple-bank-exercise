@@ -1,10 +1,10 @@
 module.exports = {
   networks: {
-    local: {
-      host: "localhost",
-      port: 8545,
-      network_id: "*" // Match any network id
-    }
+      development: {
+          host: 'localhost',
+          port: 8545,
+          network_id: '*'
+      }
   }
   // // To run contract with the latest compiler, uncomment lines 10-14 below:
   // compilers: { 
