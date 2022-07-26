@@ -44,4 +44,4 @@ jobs:
         run: git checkout $(git rev-list --max-parents=0 main) test/simpleBank.test.js
 
       - name: Run tests
-        run: truffle test test/simpleBank.test.js
+        run: truffle test
