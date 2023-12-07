@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "@openzeppelin/test-helpers": "0.5.15"
+    "@openzeppelin/test-helpers": "0.5.15",
+    "ganache": "^7.9.1",
+    "truffle": "^5.11.5"
   }
 }
